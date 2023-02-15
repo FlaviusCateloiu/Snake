@@ -3,6 +3,7 @@ using UnityEngine.Windows;
 
 public class Snake : MonoBehaviour
 {
+    //Video del Snake: https://www.youtube.com/watch?v=U8gUnpeaMbQ
     private Vector2 _direction = Vector2.right;
 
     private void Update()
