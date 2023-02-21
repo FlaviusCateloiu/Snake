@@ -73,12 +73,26 @@ public class Snake : MonoBehaviour
 
     private void OutOfBoundsVertical()
     {
-        this.transform.position = new Vector3(this.transform.position.x, Mathf.Round(this.transform.position.y * -1), this.transform.position.z);
+        if (this.transform.position.y < 0)
+        {
+            this.transform.position = new Vector3(Mathf.Round(this.transform.position.x), Mathf.Round((this.transform.position.y * -1) - 1), Mathf.Round(this.transform.position.z));
+        }
+        else
+        {
+            this.transform.position = new Vector3(Mathf.Round(this.transform.position.x), Mathf.Round((this.transform.position.y * -1) + 1), Mathf.Round(this.transform.position.z));
+        }
     }
     
     private void OutOfBoundsHorizontal()
     {
-        this.transform.position = new Vector3(Mathf.Round(this.transform.position.x * -1), this.transform.position.y, this.transform.position.z);
+        if (this.transform.position.x < 0)
+        {
+            this.transform.position = new Vector3(Mathf.Round((this.transform.position.x * -1) - 1), Mathf.Round(this.transform.position.y), Mathf.Round(this.transform.position.z));
+        }
+        else
+        {
+            this.transform.position = new Vector3(Mathf.Round((this.transform.position.x * -1) + 1), Mathf.Round(this.transform.position.y), Mathf.Round(this.transform.position.z));
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
