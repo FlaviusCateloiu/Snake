@@ -13,6 +13,5 @@ public class ScreenFunctions : MonoBehaviour
     public void exitGame()
     {
         Application.Quit();
-        Debug.Log("Saliste del Juego");
     }
 }
