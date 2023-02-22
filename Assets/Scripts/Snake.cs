@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Snake : MonoBehaviour
 {
@@ -102,7 +103,7 @@ public class Snake : MonoBehaviour
             Grow();
         } else if (other.tag == "Segment")
         {
-            ResetState();
+            SceneManager.LoadScene("GameOverScreen");
         } else if (other.tag == "ObstacleVertical")
         {
             OutOfBoundsVertical();
