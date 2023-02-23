@@ -15,24 +15,13 @@ public class ScreenFunctions : MonoBehaviour
         Application.Quit();
     }
 
-    public void buttonLeft()
+    public void info()
     {
-        Snake._direction = Rotate(Snake._direction, 90);
+        SceneManager.LoadScene("Info");
     }
 
-    public void buttonRight()
+    public void pantallaPrincipal()
     {
-        Snake._direction = Rotate(Snake._direction, -90);
-    }
-    
-    private Vector2 Rotate(Vector2 v, float degrees) {
-        float sin = Mathf.Sin(degrees * Mathf.Deg2Rad);
-        float cos = Mathf.Cos(degrees * Mathf.Deg2Rad);
-         
-        float tx = v.x;
-        float ty = v.y;
-        v.x = (cos * tx) - (sin * ty);
-        v.y = (sin * tx) + (cos * ty);
-        return v;
+        SceneManager.LoadScene("FirstScreen");
     }
 }

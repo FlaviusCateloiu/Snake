@@ -6,7 +6,7 @@ public class Snake : MonoBehaviour
 {
     //Video del Snake: https://www.youtube.com/watch?v=U8gUnpeaMbQ
     //Web tambien con Snake: https://noobtuts.com/unity/2d-snake-game
-    public static Vector2 _direction = Vector2.right;
+    private Vector2 _direction = Vector2.right;
     private List<Transform> _segments;
     public Transform segmentPrefab;
 
@@ -111,5 +111,15 @@ public class Snake : MonoBehaviour
         {
             OutOfBoundsHorizontal();
         }
+    }
+    
+    public void buttonLeft()
+    {
+        _direction = Rotate(_direction, 90);
+    }
+
+    public void buttonRight()
+    {
+        _direction = Rotate(_direction, -90);
     }
 }

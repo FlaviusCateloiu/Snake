@@ -176,7 +176,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 25
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -311,8 +311,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -450, y: 0}
-  m_SizeDelta: {x: 100, y: 120}
+  m_AnchoredPosition: {x: -850, y: 0}
+  m_SizeDelta: {x: 200, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1235530986
 MonoBehaviour:
@@ -358,8 +358,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1871444844}
-        m_TargetAssemblyTypeName: ScreenFunctions, Assembly-CSharp
+      - m_Target: {fileID: 2056398394}
+        m_TargetAssemblyTypeName: Snake, Assembly-CSharp
         m_MethodName: buttonLeft
         m_Mode: 1
         m_Arguments:
@@ -449,8 +449,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 450, y: 0}
-  m_SizeDelta: {x: 100, y: 120}
+  m_AnchoredPosition: {x: 850, y: 0}
+  m_SizeDelta: {x: 200, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1763890481
 MonoBehaviour:
@@ -496,8 +496,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1871444844}
-        m_TargetAssemblyTypeName: ScreenFunctions, Assembly-CSharp
+      - m_Target: {fileID: 2056398394}
+        m_TargetAssemblyTypeName: Snake, Assembly-CSharp
         m_MethodName: buttonRight
         m_Mode: 1
         m_Arguments:
@@ -659,6 +659,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45bf96d81852d6a7fb168dfbb4c0bc37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2056398394 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4311386758367933037, guid: 636903588328621e890cfe1539ab26c6, type: 3}
+  m_PrefabInstance: {fileID: 4311386756360446578}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7318b0c1b84ba1d9a4be40103743421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2974830368212114678
@@ -849,11 +860,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7857375414977811757, guid: dac68ac19ff62f8268264b014a847461, type: 3}
       propertyPath: m_Size.x
-      value: 46
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 7857375414977811757, guid: dac68ac19ff62f8268264b014a847461, type: 3}
       propertyPath: m_Size.y
-      value: 22
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 7857375414977811762, guid: dac68ac19ff62f8268264b014a847461, type: 3}
       propertyPath: m_RootOrder
