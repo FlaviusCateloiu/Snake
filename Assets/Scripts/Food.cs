@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
-    private int maxFrutasComidas = 10;
-    private int frutasComidas = 0;
+    
     public BoxCollider2D gridArea;
 
     private void Start()
@@ -26,15 +25,13 @@ public class Food : MonoBehaviour
         if (other.tag == "Player")
         {
             RandomizePosition();
-            if (frutasComidas < maxFrutasComidas)
+            Snake.incrementFrutasComidas(1);
+            if (Snake.getFrutasComidas() >= Snake.getMaxFrutasComidas())
             {
-                frutasComidas++;
-            }
-            else
-            {
+                Debug.Log(Snake.getFrutasComidas() + "/" + Snake.getMaxFrutasComidas());
+                Snake.resetFrutasComidas();
+                Snake.updateMaxFrutasComidas();
                 GameObject newFruit = Instantiate(this.gameObject);
-                frutasComidas++;
-                maxFrutasComidas *= 2;
             }
         }
     }

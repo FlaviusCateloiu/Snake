@@ -6,6 +6,8 @@ public class Snake : MonoBehaviour
 {
     //Video del Snake: https://www.youtube.com/watch?v=U8gUnpeaMbQ
     //Web tambien con Snake: https://noobtuts.com/unity/2d-snake-game
+    private static int _maxFrutasComidas = 5;
+    private static int _frutasComidas = 0;
     private Vector2 _direction = Vector2.right;
     private List<Transform> _segments;
     public Transform segmentPrefab;
@@ -121,5 +123,30 @@ public class Snake : MonoBehaviour
     public void buttonRight()
     {
         _direction = Rotate(_direction, -90);
+    }
+    
+    public static int getMaxFrutasComidas()
+    {
+        return _maxFrutasComidas;
+    }
+
+    public static void updateMaxFrutasComidas()
+    {
+        _maxFrutasComidas *= 2;
+    }
+
+    public static int getFrutasComidas()
+    {
+        return _frutasComidas;
+    }
+
+    public static void incrementFrutasComidas(int num)
+    {
+        _frutasComidas += num;
+    }
+
+    public static void resetFrutasComidas()
+    {
+        _frutasComidas = 0;
     }
 }
