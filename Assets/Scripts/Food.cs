@@ -4,6 +4,7 @@ public class Food : MonoBehaviour
 {
     
     public BoxCollider2D gridArea;
+    public Puntaje puntaje;
 
     private void Start()
     {
@@ -24,6 +25,7 @@ public class Food : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            puntaje.SumarPuntos(1);
             RandomizePosition();
             Snake.incrementFrutasComidas(1);
             if (Snake.getFrutasComidas() >= Snake.getMaxFrutasComidas())
