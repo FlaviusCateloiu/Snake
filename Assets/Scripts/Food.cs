@@ -28,7 +28,6 @@ public class Food : MonoBehaviour
             Snake.incrementFrutasComidas(1);
             if (Snake.getFrutasComidas() >= Snake.getMaxFrutasComidas())
             {
-                Debug.Log(Snake.getFrutasComidas() + "/" + Snake.getMaxFrutasComidas());
                 Snake.resetFrutasComidas();
                 Snake.updateMaxFrutasComidas();
                 GameObject newFruit = Instantiate(this.gameObject);

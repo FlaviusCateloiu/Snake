@@ -10,6 +10,7 @@ public class ScreenFunctions : MonoBehaviour
 
     public void exitGame()
     {
+        Debug.Log("El juego se esta cerrando.");
         Application.Quit();
     }
 
