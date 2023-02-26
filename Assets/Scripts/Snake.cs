@@ -11,11 +11,14 @@ public class Snake : MonoBehaviour
     private Vector2 _direction = Vector2.right;
     private List<Transform> _segments;
     public Transform segmentPrefab;
+    public ParticleSystem particulas;
+    private AudioSource _audioSource;
 
     private void Start()
     {
         _segments = new List<Transform>();
         _segments.Add(this.transform);
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -103,6 +106,8 @@ public class Snake : MonoBehaviour
         if (other.tag == "Food")
         {
             Grow();
+            _audioSource.Play();
+            particulas.Play();
         } else if (other.tag == "Segment")
         {
             SceneManager.LoadScene("GameOverScreen");
