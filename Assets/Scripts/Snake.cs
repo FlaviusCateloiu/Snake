@@ -1,6 +1,6 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Snake : MonoBehaviour
 {
@@ -13,6 +13,9 @@ public class Snake : MonoBehaviour
     public Transform segmentPrefab;
     public ParticleSystem particulas;
     private AudioSource _audioSource;
+    public GameObject gameOver;
+    public TextMeshProUGUI totalPuntosGameOver;
+    public Camera mainCamera;
 
     private void Start()
     {
@@ -110,7 +113,13 @@ public class Snake : MonoBehaviour
             particulas.Play();
         } else if (other.tag == "Segment")
         {
-            SceneManager.LoadScene("GameOverScreen");
+            Time.timeScale = 0f;
+            AudioSource musicScene = mainCamera.GetComponent<AudioSource>();
+            musicScene.Stop();
+            AudioSource audioGameOver = gameOver.GetComponent<AudioSource>();
+            gameOver.SetActive(true);
+            totalPuntosGameOver.text = Puntaje.GetPuntos();
+            audioGameOver.Play();
         } else if (other.tag == "ObstacleVertical")
         {
             OutOfBoundsVertical();

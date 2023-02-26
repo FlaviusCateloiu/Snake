@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
 using TMPro;
 
 public class Puntaje : MonoBehaviour
 {
-    private float puntos;
+    private static float puntos;
     private TextMeshProUGUI textMesh;
     private void Start()
     {
@@ -16,5 +17,10 @@ public class Puntaje : MonoBehaviour
     {
         puntos += puntosEntrada;
         textMesh.text = puntos.ToString("0");
+    }
+
+    public static String GetPuntos()
+    {
+        return puntos.ToString("0");
     }
 }
