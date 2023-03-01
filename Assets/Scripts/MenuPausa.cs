@@ -43,7 +43,7 @@ public class MenuPausa : MonoBehaviour
     {
         juegoPausado = false;
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("Snake");
     }
 
     public void SalirGame()
